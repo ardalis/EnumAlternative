@@ -35,17 +35,17 @@ namespace EnumReplacement
             Console.WriteLine("Smart Foo:");
             foreach (var smartFoo in SmartFoo.List)
             {
-                Console.WriteLine($"Foo: {smartFoo.Name} ({smartFoo.Value})");
+                Console.WriteLine($"Foo: {smartFoo}");
             }
             Console.WriteLine("Smart Bar:");
             foreach (var smartBar in SmartBar.List)
             {
-                Console.WriteLine($"Bar: {smartBar.Name} ({smartBar.Value})");
+                Console.WriteLine($"Bar: {smartBar}");
             }
             Console.WriteLine("Smart Baz:");
             foreach (var smartBaz in SmartBaz.List)
             {
-                Console.WriteLine($"Baz: {smartBaz.Name} ({smartBaz.Value})");
+                Console.WriteLine($"Baz: {smartBaz}");
             }
 
             Console.ReadLine();
@@ -185,7 +185,7 @@ namespace EnumReplacement
             return List.Single(item => EqualityComparer<TValue>.Default.Equals(item.Value, value));
         }
 
-        public override string ToString() => Name;
+        public override string ToString() => $"{Name} ({Value})";
     }
 
     public class SmartFoo : SmartEnum<SmartFoo, int>
